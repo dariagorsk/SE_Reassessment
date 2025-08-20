@@ -8,8 +8,9 @@ max_attempts = 5
 word = random.choice(secret_words)
 hidden_word = ["_" for ch in word]
 
+print(f"Welcome to the game \"Hangman\"! Your goal is to discover a secret word or phrase by guessing letters of the alphabet. Enter only one letter at a time. You have only 5 wrong guesses.") 
+
 while attempt < max_attempts:
-    print(f"Welcome to the game \"Hangman\"! Your goal is to discover a secret word or phrase by guessing letters of the alphabet. Enter only one letter at a time. You have only 5 wrong guesses.") 
     guess = input(f"The secret word: {" ".join(hidden_word)}. Let's start: ").lower()
 
     if not guess.isalpha() or len(guess) != 1:
