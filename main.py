@@ -30,7 +30,7 @@ while attempt < max_attempts:
         attempt += 1
         print(f"Nope! The letter is not in the word. Attempts remaining: {max_attempts - attempt}")
 
-    if " ".join(hidden_word) == word:
+    if "".join(hidden_word) == word:
         print("Great! You won!")
         break
 
