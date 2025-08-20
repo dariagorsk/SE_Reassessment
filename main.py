@@ -8,10 +8,10 @@ max_attempts = 5
 word = random.choice(secret_words)
 hidden_word = ["_" for ch in word]
 
-print(f"Welcome to the game \"Hangman\"! Your goal is to discover a secret word or phrase by guessing letters of the alphabet. Enter only one letter at a time. You have only 5 wrong guesses.") 
+print(f"Welcome to the game \"Hangman\"! Your goal is to discover a secret word or phrase by guessing letters of the alphabet. Enter only one letter at a time. You have only 5 wrong guesses. The secret word: {" ".join(hidden_word)}.") 
 
 while attempt < max_attempts:
-    guess = input(f"The secret word: {" ".join(hidden_word)}. Let's start: ").lower()
+    guess = input("Write your letter: ").lower()
 
     if not guess.isalpha() or len(guess) != 1:
         print("Please, enter only 1 letter! Let's try again: ")
@@ -30,7 +30,7 @@ while attempt < max_attempts:
         attempt += 1
         print(f"Nope! The letter is not in the word. Attempts remaining: {max_attempts - attempt}")
 
-    if guessed_letters == word:
+    if " ".join(hidden_word) == word:
         print("Great! You won!")
         break
 
